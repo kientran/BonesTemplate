@@ -1,0 +1,211 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+a {
+	text-decoration: none;
+	color: #afcf20;
+}
+
+a:hover, .selected {
+	color: white;
+	border-bottom: 5px solid white;
+}
+
+a img, a:hover img, a.posterousGalleryMainlink:hover, 
+#social ul li a:hover, #subscribe a:hover {
+	border: 0px;
+}
+
+ul, ol {list-style-position: inside; }
+
+.textbottom {vertical-align:text-bottom;}
+
+p {
+	padding-bottom: 1em;
+}
+
+h1 {
+	font-size: 1.2em !important;
+}
+h2 {
+	font-size: 1.2em;
+	font-weight: 100;
+}
+
+body {
+	background: #626262;
+	background-image: url('../images/headerbg2.png');
+	background-repeat: repeat-x;
+	font-family: Helvetica, sans-serif;
+	color: #eee;
+	line-height: 1.5em;
+}
+
+#header-container, #main-content-container, 
+#sidebar-container, #footer-container {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#page-container {
+	margin: auto;
+	width: 960px;
+}
+
+#header-container {
+	padding-top: 10px;
+	height: 110px;
+	position: relative;
+	margin-bottom: 40px;
+}
+
+#navigation ul {
+	position: absolute;
+	bottom: 10px;
+	font-size: 1.2em;
+	color: #afcf20;
+}
+
+#navigation ul, #footer-container ul, #social ul,
+#search-block ul, #social ul li, #issuelist {
+	list-style: none;
+}
+
+#navigation li {
+	display: inline;
+	padding-right: 10px;
+}
+
+#subscribe {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	font-size: .7em;
+}
+
+#sidebar-container {
+	float: right;
+	width: 380px;
+	height: 100%;
+}
+
+#profile {
+	border-bottom: 1px solid #777;	
+	height: 160px;
+}
+
+#profile ul li {
+	margin-top: 0px;
+}
+
+#social {
+	display: inline-block;
+}
+
+.g {
+	background-image: url('../images/socialsprites.png');
+}
+
+.linkedin {
+	background-position: 0px 0px;
+}
+
+.facebook {
+	background-position: 96px 0px;
+}
+
+.rss {
+	background-position: 80px 0px;
+}
+.posterous {
+	background-position: 64px 0px;
+}
+
+.twitter {
+	background-position: 48px 0px;	
+}
+
+.friendfeed {
+	background-position: 32px 0px;
+}
+
+.email {
+	background-position: 16px 0px;
+}
+
+#social a, .sublink {
+	display: block;
+	width: 16px;
+	height: 16px;
+	margin: 0 5px;
+}
+
+#headshot {
+	margin-right: 20px;
+}
+
+#about {
+	padding-top: 10px;
+}
+
+#main-content-container {
+	overflow: auto;
+}
+
+#searchbox {
+	background: #333;	
+	color: #eee;
+	font-size: 1em;
+}
+#searchbox_button {
+	background: #333;
+	border: 1px solid #777;
+	color: #eee;
+	font-size: .9em;
+	padding: 2px;
+}
+
+#searchall, #search-block ul,
+.post-tags, .post-comment-count, .post-favorite-count,
+#footer-container, #list-tags {
+	font-size: .7em;
+}
+
+#search-block ul li, #footer-container ul li {
+	display: inline;
+	padding-right: 10px;
+}
+.post, .post-header, .post-footer {
+	padding-bottom: 1em;
+}
+
+.date {
+	color: #ccc;
+}
+
+.post-content {
+	border-bottom: 1px solid #777;
+}
+
+.post-favorite-count {
+	padding-right: 20px;
+}
+
+#footer-container {
+	margin-top: 10px;
+	border-top: 1px solid #777;
+}
+
+.right, .post-comment-count, .post-favorite-count,
+.date, .favhover, .sublink, #posterousbar {
+	float: right;
+}
+
+.left, #headshot, #social li {
+	float: left;
+}
+.comment {
+	color: #eee;
+}
