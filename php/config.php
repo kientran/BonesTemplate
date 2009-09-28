@@ -1,6 +1,6 @@
 <?php
 
-$conf = array(
+    $conf = array(
 	'site' => array(
 		'baseurl'	=> 'http://localhost:8888/BonesTemplate/',
 		'navigation' => array(
@@ -16,12 +16,10 @@ $conf = array(
 		'base'		=> '',
 		'baseurl'	=> ''
 	)
-);
+    );
 
-$conf['template']['base'] = "templates/".$conf['template']['active'].'/';
-$conf['template']['baseurl'] = $conf['site']['baseurl'].$conf['template']['base'];
-
-
+    $conf['template']['base'] = "templates/".$conf['template']['active'].'/';
+    $conf['template']['baseurl'] = $conf['site']['baseurl'].$conf['template']['base'];
 
 
 ?>

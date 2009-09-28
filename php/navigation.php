@@ -1,9 +1,11 @@
 <?php
 
+// Site Level Object/Fuction.  This can be called by any
+// object in the Template tree
 function printnavigation($selected="")
 {
     include_once 'gagawa-1.2-beta.php';
-    require 'config.php';
+    $conf = Config::getConf();
     $navigation = $conf['site']['navigation'];
 
     $ul = new Ul();

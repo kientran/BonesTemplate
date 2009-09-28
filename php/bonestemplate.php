@@ -7,17 +7,43 @@ class BonesTemplate {
 	protected $file;
 	protected $values = array();
 	protected $conf = array();
-	
-	public function __construct($file='template.tpl',$config="config.php") {
-		include($config);
-		$this->file = $conf['template']['base'].$file;
-		$this->set("templatebaseurl",$conf['template']['baseurl']);		
+
+	public function __construct($file='tpl/template.tpl') {
+        $this->conf = Config::getConf();
+		$this->file = $this->conf['template']['base'].$file;
+		$this->set("templatebaseurl",$this->conf['template']['baseurl']);
+
+        // Import tempalte specific class file called template.php for custom
+        // functionality that only applies for that active template.
+        // Examples could be custom sidebar constructs 
+        $templateSpecificClasses = $this->conf['template']['base'].'template.php';
+        if(file_exists($templateSpecificClasses)) {
+            include_once($templateSpecificClasses);  //Prevent recursive including of death
+        }
 	}
 	
 	public function set($key, $value) {
-    $this->values[$key] = $value;
+        $this->values[$key] = $value;
 	}
- 
+    
+    public function append($key, $value) {
+        if(!isset($this->values[$key])){
+            $this->set($key, $value);
+        }
+        else {
+            $this->values[$key] = $this->values[$key].$value;
+        }
+    }
+
+    public function prepend($key, $value) {
+        if(!isset($this->values[$key])){
+            $this->set($key, $value);
+        }
+        else {
+            $this->values[$key] = $value.$this->values[$key];
+        }
+    }
+  
 	public function output() {
 	    if (!file_exists($this->file)) {
 	        return "Error loading template file ($this->file).<br />";
@@ -37,7 +63,7 @@ class BonesTemplate {
 	 
 	    foreach ($templates as $template) {
 	        $content = (!is_a($template, "BonesTemplate"))
-	            ? "Error, incorrect type - expected BonesTemplate.".get_class($template)
+	            ? "Error, incorrect type (".get_class($template).") - expected BonesTemplate.<br />"
 	            : $template->output();
 	        $output .= $content . $separator;
 	    }
@@ -47,30 +73,12 @@ class BonesTemplate {
 
 }
 
-class THeader extends BonesTemplate {
-	public function __construct($file='header.tpl') {
-		parent::__construct($file);
-	}
-}
-
-class TSidebar extends BonesTemplate {
-	public function __construct($file='sidebar.tpl') {
-		parent::__construct($file);
-	}
-}
-
-class TFooter extends BonesTemplate {
-	public function __construct($file='footer.tpl') {
-		parent::__construct($file);
-	}
-}
-
+// Predefined Helper Class for page includes.  This is a "site" level class techincaly.
 class PageIncludes extends BonesTemplate {
 	protected $url;
 	protected $type;
 	
-	public function __construct($url,$type,$config='config.php') {
-		include($config);
+	public function __construct($url,$type) {
 		$this->url = $url;
 		$this->type = $type;
 	}
