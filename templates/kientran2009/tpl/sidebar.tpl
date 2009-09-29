@@ -1,7 +1,7 @@
 <div id="sidebar-container">
 		<div id="profile">
 			<div id="headshot">
-				<img src="[@templatebaseurl]images/headshot.jpg">
+				<img src="[@headshoturl]">
 			</div>
 			Kien Tran 
 			<div id="social">
@@ -13,7 +13,11 @@
 			</ul>
 			</div>
 			<ul>
-				<li>Software developer</li>				<li>System administrator</li>				<li>Startup Enthusiast</li>				<li>Web 2.0 junkie</li>				<li>Catholic</li>
+				<li>Software developer</li>
+                <li>System administrator</li>
+                <li>Startup Enthusiast</li>
+                <li>Web 2.0 junkie</li>
+                <li>Catholic</li>
 			</ul>
 		
 		</div>

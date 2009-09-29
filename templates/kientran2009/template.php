@@ -23,8 +23,6 @@ class TFooter extends BonesTemplate {
 }
 
 
-$this->set("field","filed data");  //Local variable to top class
-
 // We set Template specific variables here, including creating
 // child class objects for blocks of the page
 
@@ -33,19 +31,20 @@ $this->set("field","filed data");  //Local variable to top class
 // performance hit you risk.
 
 // This is a Template Level Include
-
 $includes[] = new PIStyleSheet($this->conf['template']['baseurl'].'css/style.css');
 $includes[] = new PIJavascript($this->conf['template']['baseurl'].'js/template.js');
 $this->append("includes",BonesTemplate::merge($includes)); // Include it to top stack
 
 $header = new THeader();
 // Navigation was defined on site level so we can use it here
+$header->set("logourl",$this->conf['template']['baseurl'].'images/logo.png');
 $header->set("navigation",printnavigation('HOME'));
 $header->set("siteurl",$this->conf['site']['baseurl']);
 $header->set("siterss",$this->conf['site']['baseurl'].'rss.xml');
 $this->set("header",$header->output());
 
 $sidebar = new TSidebar();
+$sidebar->set("headshoturl",$this->conf['template']['baseurl'].'images/headshot.jpg');
 $this->set("sidebar",$sidebar->output());
 
 $footer = new TFooter();

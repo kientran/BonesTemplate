@@ -40,7 +40,6 @@ class BonesTemplate {
 	public function __construct($file='tpl/template.tpl') {
         $this->conf = Config::getConf();
         $this->file = $this->conf['template']['base'].$file;
-        $this->set("templatebaseurl",$this->conf['template']['baseurl']);
 
         // Import tempalte specific class file called template.php for custom
         // functionality that only applies for that active template.

@@ -1,4 +1,4 @@
-	<a href="[@siteurl]"><img src="[@templatebaseurl]images/logo.png"></a>
+	<a href="[@siteurl]"><img src="[@logourl]"></a>
 	
 	<div id="navigation">
 		[@navigation]

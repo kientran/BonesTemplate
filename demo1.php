@@ -33,6 +33,5 @@ $page->set("date","");
 // As noted with the append, it will append to the end of the stack
 $includes[] = new PIJavascript($conf['site']['baseurl'].'js/site.js');
 $page->append("includes",BonesTemplate::merge($includes));
-
 echo $page->output();
 ?>
